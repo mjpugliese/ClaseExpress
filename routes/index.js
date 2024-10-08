@@ -64,8 +64,10 @@ router.get("/", (req, res)=>{
     const banda = req.body.banda
     const cancion = req.body.cancion
 
-    res.status(200).send("La cancion "+ cancion + " De la banda "+ banda + "Fue agregada correctamente a la DB")
-})
+    // res.status(200).send("La cancion "+ cancion + " De la banda "+ banda + "Fue agregada correctamente a la DB")
+    res.status(200).send("RUTA EJECUTADA CORRECTAMENTE")
+
+  })
 
 router.get("/users", (req, res)=>{
     res.status(200).send(usuarios)
@@ -73,6 +75,7 @@ router.get("/users", (req, res)=>{
 
 
 router.get("/users/:uid", (req, res)=>{
+    console.log(req.params)
     const uid = req.params.uid
 
     const usuarioFiltrado = usuarios.filter((usuario)=>usuario.uid === uid)
@@ -84,4 +87,7 @@ router.get("/products", (req, res)=>{
     res.status(200).send("Hasta luego!")
 })
 
-module.exports = router
+
+
+
+ module.exports = router
