@@ -2,8 +2,11 @@
 
 const express = require('express')
 const mongoose = require('mongoose')
+
 const router = require('./routes/index.js')
 const Propiedades = require('./models/index.js')
+const Discos = require('./models/discos.js')
+
 const url = "mongodb+srv://maxipugliese:TxzdasGsam0FB2GF@clasemongo.5tbml.mongodb.net/?retryWrites=true&w=majority&appName=ClaseMongo"
 
 const app = express()
@@ -28,6 +31,3 @@ const connectToMongo = async ()=>{
 }
 
 connectToMongo()
-
-
-
