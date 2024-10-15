@@ -7,7 +7,7 @@ const Discos = new mongoose.Schema({
     canciones: [
         {
             nombreDeCancion: {type: String},
-            duracion : {type: Number}
+            duracion : {type: String}
         }
     ]
 })
