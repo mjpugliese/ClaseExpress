@@ -10,8 +10,13 @@ const Discos = require('./models/discos.js')
 const url = "mongodb+srv://maxipugliese:TxzdasGsam0FB2GF@clasemongo.5tbml.mongodb.net/?retryWrites=true&w=majority&appName=ClaseMongo"
 
 const app = express()
+
 //EL ORGANIZADOR DE LA DATA
 app.use(express.json())
+
+
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
 
 //EL ORGANIZADOR DE LAS RUTAS
 app.use('/', router)
