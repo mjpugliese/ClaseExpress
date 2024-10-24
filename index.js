@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 const router = require('./routes/index.js')
 const Propiedades = require('./models/index.js')
-const Discos = require('./models/discos.js')
+const Discos = require('./models/index.js')
 
 const url = "mongodb+srv://maxipugliese:TxzdasGsam0FB2GF@clasemongo.5tbml.mongodb.net/?retryWrites=true&w=majority&appName=ClaseMongo"
 

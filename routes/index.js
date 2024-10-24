@@ -4,11 +4,11 @@ const Discos = require('../models/discos.js')
 const router = express.Router()
 
 const albums = require('./albums.js')
-//const users = require('./users.js')
+const users = require('./users.js')
 
 //router.use 
 router.use('/discos', albums)
-//router.use('/users', users)
+router.use('/user', users)
 
  module.exports = router
 
