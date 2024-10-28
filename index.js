@@ -2,6 +2,7 @@
 
 const express = require('express')
 const mongoose = require('mongoose')
+const cookieParser = require('cookie-parser')
 
 const router = require('./routes/index.js')
 const Propiedades = require('./models/index.js')
@@ -13,6 +14,7 @@ const app = express()
 
 //EL ORGANIZADOR DE LA DATA
 app.use(express.json())
+app.use(cookieParser())
 
 
 const path = require("path");
@@ -20,6 +22,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //EL ORGANIZADOR DE LAS RUTAS
 app.use('/', router)
+
 
 const connectToMongo = async ()=>{
   try{

@@ -7,6 +7,7 @@ const albums = require('./albums.js')
 const users = require('./users.js')
 
 //router.use 
+router.use("/health", (req, res) => res.sendStatus(200));
 router.use('/discos', albums)
 router.use('/user', users)
 

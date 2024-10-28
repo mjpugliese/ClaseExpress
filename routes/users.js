@@ -52,32 +52,33 @@ router.post('/register', async (req, res) => {
   }
 });
 
-router.get('/register', async (req, res) => {
+router.post('/login', async (req, res) => {
       const usuario = req.body.usuario
       const contrasena = req.body.contrasena
-  
+      console.log("COOKIES", req.cookies)
     try {
       const userLog = await User.findOne({usuario}) 
         console.log(userLog)
 
       const result = await checkPassword(contrasena, userLog.contrasena)
 
-      //SIGN 
-        //informacion , codigo secreto, duracion
+      // SIGN 
+      //   informacion , codigo secreto, duracion
 
-        // const secret = "hola"
-        // const payload = {
-        //     usuario: userLog.usuario
-        // }
+        const secret = "hola"
+        const payload = {
+            usuario: userLog.usuario
+        }
 
-        // const token = jwt.sign(payload, secret, {expiresIn: '3h'})
+        const token = jwt.sign(payload, secret, {expiresIn: '3h'})
 
-        verificandoToken()
+        // verificandoToken()
 
-      //res.cookie(token)
+      res.cookie("token", token)
       res.status(200).json({  });
     } catch (error) {
       console.log(error)
+      res.status(404).json({  });
     }
   });
     

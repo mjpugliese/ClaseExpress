@@ -37,6 +37,7 @@ router.get('/discos', async (req, res)=>{
   }
 })
 
+//http://localhost:3000/discos
 //GET x NOMBRE
 
 router.get('/discos/:titulo', async (req, res)=>{
