@@ -16,7 +16,7 @@ const span = document.querySelector('span')
   
 async function getAlbums (){
     try {
-       const response = await axios.get('http://localhost:3000/discos/discos/'+input.value)
+       const response = await axios.get('https://claseexpress.onrender.com/discos/discos/'+input.value)
        console.log(response.data)
 
        h2.textContent = response.data[0].titulo
